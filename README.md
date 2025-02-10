@@ -1,2 +1,2 @@
 # ureka-2nd-algorithmStudy
-* Test
+* Test2
