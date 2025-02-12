@@ -1,4 +1,4 @@
-package pr;
+package pr.solution_올바른괄호;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
