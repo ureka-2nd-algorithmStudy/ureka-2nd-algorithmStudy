@@ -1,4 +1,4 @@
-package boj;
+package boj.p2493_탑_스택;
 
 import java.io.*;
 import java.util.*;
