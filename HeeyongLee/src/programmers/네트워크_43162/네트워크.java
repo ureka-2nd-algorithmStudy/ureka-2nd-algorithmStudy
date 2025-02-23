@@ -9,7 +9,7 @@ public class 네트워크 {
     static int netCnt;
 
     public static void main(String[] args) {
-        System.out.println(new 네트워크().solution(3, new int[][]{{1, 1, 0}, {1, 1, 0}, {0, 0, 1}}));
+//        System.out.println(new 네트워크().solution(3, new int[][]{{1, 1, 0}, {1, 1, 0}, {0, 0, 1}}));
         System.out.println(new 네트워크().solution(3, new int[][]{{1, 1, 0}, {1, 1, 1}, {0, 1, 1}}));
     }
 
@@ -19,7 +19,6 @@ public class 네트워크 {
         for (int i = 0; i < n; i++) {
             if (!visited[i]) {
                 bfs(i, computers);
-                netCnt++;
             }
         }
         return netCnt;
@@ -29,7 +28,7 @@ public class 네트워크 {
         Queue<Integer> q = new LinkedList<>();
         q.offer(start);
         visited[start] = true;
-
+        netCnt++;
         while (!q.isEmpty()) {
             int v = q.poll();
             for (int i = 0; i < coms.length; i++) {
