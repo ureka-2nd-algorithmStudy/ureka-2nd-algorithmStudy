@@ -10,7 +10,6 @@ public class 계단_오르기 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int N = Integer.parseInt(br.readLine());
-
         int[] stair = new int[301];
         int[] score = new int[301];
 
