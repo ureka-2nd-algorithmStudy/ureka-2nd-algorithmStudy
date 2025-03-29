@@ -27,9 +27,9 @@ public class Solution_N으로표현 {
 	            for(int j = 1; i + j <= 8 && j <= i; j++){                        
 	                for(int a : dp.get(i)){
 	                    for(int b : dp.get(j)){
-	                        dp.get(i + j).add(a + b);
 	                        dp.get(i + j).add(b + a);
 	                        
+							// 뺴기와 나누기는 순서에 따라 연산결과 달라짐
 	                        dp.get(i + j).add(a - b);
 	                        dp.get(i + j).add(b - a);
 	                        
