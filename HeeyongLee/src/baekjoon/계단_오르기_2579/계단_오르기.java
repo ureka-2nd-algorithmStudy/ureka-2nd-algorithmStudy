@@ -27,7 +27,6 @@ public class 계단_오르기 {
         memoi[1] = stairs[1];
         memoi[2] = stairs[1] + stairs[2];  // 두 번째 계단은 첫 번째 계단 + 두 번째 계단
 
-
         // DP 배열 채우기
         for (int i = 3; i <= N; i++) {
             memoi[i] = Math.max(memoi[i - 2] + stairs[i], memoi[i - 3] + stairs[i - 1] + stairs[i]);
