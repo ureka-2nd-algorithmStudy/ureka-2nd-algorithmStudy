@@ -7,7 +7,7 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class P2178 {
+public class P2178_4 {
 	static int[][] map;
 	
 	static int[] dx = { 1,0,-1,0};
@@ -30,44 +30,40 @@ public class P2178 {
 				map[i][j] = Integer.valueOf(arr[j]);
 			}
 		}
-		Node start = new Node(0,0,0);
+		Node start = new Node(0,0,1);
 		System.out.println(bfs(start,N,M));
 	}
-	
 	static int bfs(Node start, int N, int M) {
-		
-		Queue<Node> queue = new ArrayDeque<Node>();
-		
+		Queue<Node> queue = new ArrayDeque<>();
 		queue.offer(start);
-		int cnt = 0;
-		while(!queue.isEmpty()) {
+		visited[start.getX()][start.getY()] = true;
+
+		while (!queue.isEmpty()) {
 			Node node = queue.poll();
-			
 			int x = node.getX();
 			int y = node.getY();
-			for(int d = 0; d < 4; d++) {
-				Node frontier = new Node(x+dx[d],y+dy[d],cnt++);
-				int nX = frontier.getX();
-				int nY =  frontier.getY();
-				if(nX == N-1 && nY == M-1) {
-					return frontier.getDist(); 
-				}
-				if(nX >= 0 && nY >= 0 && nX < N && nY < M) {
-					
-					if(!visited[nX][nY] && map[nX][nY] != 0) {
-						System.out.println(nX);
-						queue.offer(frontier);
-						
-					}
+			int dist = node.getDist();
 
+			if (x == N - 1 && y == M - 1) {
+				return dist;
+			}
+
+			for (int d = 0; d < 4; d++) {
+				int nX = x + dx[d];
+				int nY = y + dy[d];
+
+				if (nX >= 0 && nY >= 0 && nX < N && nY < M) {
+					if (!visited[nX][nY] && map[nX][nY] == 1) {
+						visited[nX][nY] = true;
+						queue.offer(new Node(nX, nY, dist + 1)); // ← 여기!
+					}
 				}
-								
 			}
 		}
-		
-		return 0;
-		
+
+		return -1;
 	}
+
 
 	
 	static class Node {
