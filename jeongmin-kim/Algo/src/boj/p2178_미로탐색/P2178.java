@@ -1,4 +1,4 @@
-package p2178_미로탐색;
+package boj.p2178_미로탐색;
 
 import java.io.BufferedReader;
 import java.io.IOException;

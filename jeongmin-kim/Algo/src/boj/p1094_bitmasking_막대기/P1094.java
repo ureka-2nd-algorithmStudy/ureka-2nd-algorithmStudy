@@ -1,4 +1,4 @@
-package p1094_bitmasking_막대기;
+package boj.p1094_bitmasking_막대기;
 
 import java.io.BufferedReader;
 import java.io.IOException;
