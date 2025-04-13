@@ -1,4 +1,4 @@
-package simulation;
+package bruteForce;
 
 import java.util.Arrays;
 
@@ -10,6 +10,8 @@ public class p_공원 {
 
             // 매트 크기  오름차순 정렬 후 뒤에서부터 탐색
             Arrays.sort(mats);
+            
+            
 
             // 공원 전체 크기 
             int x = park.length;
